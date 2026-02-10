@@ -3,7 +3,7 @@
 import { useQuery } from '@apollo/client';
 import Link from 'next/link';
 import { GetCategoryDocument } from '@/lib/graphql/generated/graphql';
-import { MovieGrid } from '@/components/organisms/MovieGrid';
+import { VirtualizedMovieGrid } from '@/components/organisms/VirtualizedMovieGrid';
 import { Skeleton } from '@/components/atoms/Skeleton';
 
 type CategoryTemplateProps = {
@@ -62,7 +62,7 @@ export const CategoryTemplate: React.FC<CategoryTemplateProps> = ({
       </div>
 
       {/* Movie Grid */}
-      <MovieGrid videos={category?.videos} loading={loading} />
+      <VirtualizedMovieGrid videos={category?.videos} loading={loading} />
     </div>
   );
 };
